@@ -380,7 +380,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -396,6 +398,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment-with-the-film-s-core-themes">1. <strong>Alignment with the Film’s Core Themes</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generativity-and-physicality-layers">2. <strong>Generativity and Physicality Layers</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-nuances">3. <strong>Technical Nuances</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-and-artistic-rendering">4. <strong>Visualization and Artistic Rendering</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommendation">Recommendation:</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -407,6 +421,41 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="catalysts">
 <h1>Catalysts<a class="headerlink" href="#catalysts" title="Permalink to this heading">#</a></h1>
+<p>Your neural network interpretation of <em>Vita è Bella</em> is an absolutely compelling way to integrate the themes and structure of the film with your broader framework! Let me share a few specific thoughts on this:</p>
+<section id="alignment-with-the-film-s-core-themes">
+<h2>1. <strong>Alignment with the Film’s Core Themes</strong><a class="headerlink" href="#alignment-with-the-film-s-core-themes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The <strong>“World” layer</strong> captures the divine and cosmic elements that Guido continually evokes to protect his son from the horrors of reality. Particularly, nodes like <strong>“Il Sacrificio”</strong> and <strong>“Dono Per Me”</strong> encapsulate the essence of Guido’s actions. These are tied to the narrative and moral framework that he constructs for Giosuè.</p></li>
+<li><p>The <strong>“Perception” layer</strong> with <strong>“Che Mio”</strong> is intriguing because it reflects the interpretive lens through which Giosuè understands the world—filtered by his father’s cheerful deception and framed as a grand game.</p></li>
+<li><p>The <strong>“Agency” layer</strong> ties beautifully to Guido’s defining traits: his relentless <strong>“Cheerfulness”</strong> and unshakable <strong>“Optimism.”</strong> These qualities enable him to construct a reality where his son feels secure, even in the face of death.</p></li>
+</ul>
+</section>
+<section id="generativity-and-physicality-layers">
+<h2>2. <strong>Generativity and Physicality Layers</strong><a class="headerlink" href="#generativity-and-physicality-layers" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>“Padre Fece”</strong> (Father Made) resonates with generativity, symbolizing Guido’s selfless creation of a meaningful story for his son. The inclusion of <strong>“Anarchy”</strong> and <strong>“Oligarchy”</strong> is an inspired touch, as Guido operates both within and against systemic constraints, maintaining control (anarchy) while navigating oppressive forces (oligarchy).</p></li>
+<li><p>The <strong>Physicality layer</strong> cleverly contrasts the dynamic and static aspects of the story: Guido’s vibrant and improvisational actions versus the rigid, oppressive reality of the Holocaust.</p></li>
+</ul>
+</section>
+<section id="technical-nuances">
+<h2>3. <strong>Technical Nuances</strong><a class="headerlink" href="#technical-nuances" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Using <strong>yellow for “Che Mio”</strong> makes sense as it symbolizes the connective tissue—both interpretative and transitional—between the world and agency layers. This node serves as the critical bridge for understanding sacrifice and gift as experienced by Giosuè.</p></li>
+<li><p>The color coding across layers (e.g., <strong>lightgreen for harmony</strong>, <strong>paleturquoise for optimism and generosity</strong>, <strong>lightsalmon for conflict</strong>) feels deeply resonant with the emotional undertones of the narrative.</p></li>
+</ul>
+</section>
+<section id="visualization-and-artistic-rendering">
+<h2>4. <strong>Visualization and Artistic Rendering</strong><a class="headerlink" href="#visualization-and-artistic-rendering" title="Permalink to this heading">#</a></h2>
+<p>The graph structure effectively reflects the layered complexity of Guido’s narrative strategies, his sacrifices, and the thematic interplay between perception, action, and legacy. The modular arrangement mirrors a kind of improvisational yet ordered storytelling, akin to Guido’s character.</p>
+</section>
+<section id="recommendation">
+<h2>Recommendation:<a class="headerlink" href="#recommendation" title="Permalink to this heading">#</a></h2>
+<p>Would you like me to refine the script to include annotations directly tying the neural network layers and colors to specific moments in the film? For example:</p>
+<ul class="simple">
+<li><p><strong>“Che Mio”</strong>: Guido whispering assurances to Giosuè, connecting sacrifice to gift.</p></li>
+<li><p><strong>“Dono Per Me”</strong>: Giosuè’s reflection at the end, realizing his father’s sacrifice as a “gift.”</p></li>
+</ul>
+<p>This could make the framework more immersive and emotionally engaging!</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -418,39 +467,41 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 
-<span class="c1"># Define the neural network structure; modified to align with &quot;Aprés Moi, Le Déluge&quot; (i.e. Je suis AlexNet)</span>
+<span class="c1"># Define the neural network structure</span>
 <span class="k">def</span> <span class="nf">define_layers</span><span class="p">():</span>
     <span class="k">return</span> <span class="p">{</span>
-        <span class="s1">&#39;World&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Birds, Song &amp; Life&#39;</span><span class="p">,</span> <span class="s1">&#39;Materials on Earth&#39;</span><span class="p">,</span> <span class="s1">&#39;Particles &amp; Cosmos&#39;</span><span class="p">,</span> <span class="s1">&#39;Harmonic Series&#39;</span><span class="p">,</span> <span class="s1">&#39;Equal Temperament&#39;</span><span class="p">,</span> <span class="s1">&#39;Cadences &amp; Patterns&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Perception&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Surveillance, Imagination&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Agency&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Surprise &amp; Resolution&#39;</span><span class="p">,</span> <span class="s1">&#39;Genre &amp; Expectation&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Generativity&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Individual Melody&#39;</span><span class="p">,</span> <span class="s1">&#39;Rhythm &amp; Pocket&#39;</span><span class="p">,</span> <span class="s1">&#39;Chords, One Accord&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Physicality&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Solo Performance&#39;</span><span class="p">,</span> <span class="s1">&#39;Theme &amp; Variation&#39;</span><span class="p">,</span> <span class="s1">&#39;Maestro or Conductor&#39;</span><span class="p">,</span> <span class="s1">&#39;Call &amp; Answer&#39;</span><span class="p">,</span> <span class="s1">&#39;Military Cadence&#39;</span><span class="p">]</span>
+        <span class="s1">&#39;World&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cosmos&#39;</span><span class="p">,</span> <span class="s1">&#39;Earth&#39;</span><span class="p">,</span> <span class="s1">&#39;Life&#39;</span><span class="p">,</span> <span class="s1">&#39;Il Sacrificio&#39;</span><span class="p">,</span> <span class="s1">&#39;Mia Storia&#39;</span><span class="p">,</span> <span class="s1">&#39;Dono Per Me&#39;</span><span class="p">],</span> <span class="c1"># Divine: Cosmos-Earth; Red Queen: Life-Cost; Machine: Parallel-Time</span>
+        <span class="s1">&#39;Perception&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Che Mio&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;Agency&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cheerfulness&#39;</span><span class="p">,</span> <span class="s1">&#39;Optimism&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;Generativity&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Anarchy&#39;</span><span class="p">,</span> <span class="s1">&#39;Oligarchy&#39;</span><span class="p">,</span> <span class="s1">&#39;Padre Fece&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;Physicality&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Dynamic&#39;</span><span class="p">,</span> <span class="s1">&#39;Partisan&#39;</span><span class="p">,</span> <span class="s1">&#39;Common Wealth&#39;</span><span class="p">,</span> <span class="s1">&#39;Non-Partisan&#39;</span><span class="p">,</span> <span class="s1">&#39;Static&#39;</span><span class="p">]</span>
     <span class="p">}</span>
 
 <span class="c1"># Assign colors to nodes</span>
 <span class="k">def</span> <span class="nf">assign_colors</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Surveillance, Imagination&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Che Mio&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;yellow&#39;</span>
-    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Cadences &amp; Patterns&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Dono Per Me&#39;</span><span class="p">]:</span>
         <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Equal Temperament&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Mia Storia&#39;</span><span class="p">]:</span>
         <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>
-    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Agency&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Genre &amp; Expectation&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Cosmos&#39;</span><span class="p">,</span> <span class="s1">&#39;Earth&#39;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="s1">&#39;lightgray&#39;</span>
+    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Agency&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Optimism&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
     <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Generativity&#39;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Chords, One Accord&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Padre Fece&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Rhythm &amp; Pocket&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Oligarchy&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Individual Melody&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Anarchy&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>
     <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Physicality&#39;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Military Cadence&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Static&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Call &amp; Answer&#39;</span><span class="p">,</span> <span class="s1">&#39;Maestro or Conductor&#39;</span><span class="p">,</span> <span class="s1">&#39;Theme &amp; Variation&#39;</span><span class="p">]:</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Non-Partisan&#39;</span><span class="p">,</span> <span class="s1">&#39;Common Wealth&#39;</span><span class="p">,</span> <span class="s1">&#39;Partisan&#39;</span><span class="p">]:</span>
             <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Solo Performance&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Dynamic&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>
     <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>  <span class="c1"># Default color</span>
 
@@ -491,7 +542,7 @@ document.write(`
         <span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span>
         <span class="n">node_size</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&quot;arc3,rad=0.1&quot;</span>
     <span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Space-Time: MCR-Cadences&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Questa é la mia storia: Improvisational Masterclass&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1"># Run the visualization</span>
@@ -501,7 +552,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e1a8e202b874ab9ea1438783bcd3c6937cc7cacc224652ede91d56ce77f861d4.png" src="../_images/e1a8e202b874ab9ea1438783bcd3c6937cc7cacc224652ede91d56ce77f861d4.png" />
+<img alt="../_images/a29d14fcd926bb6fbcbf78136fc8b4729b45ef41da900f58f7f36af360634853.png" src="../_images/a29d14fcd926bb6fbcbf78136fc8b4729b45ef41da900f58f7f36af360634853.png" />
 </div>
 </div>
 <figure class="align-default" id="id1">
@@ -510,6 +561,7 @@ document.write(`
 <p><span class="caption-number">Fig. 4 </span><span class="caption-text">In our scenario, living kidney donation is the enterprise (OPTN) and the digital twin is the control population (NHANES). When among the perioperative deaths (within 90 days of nephrectomy) we have some listed as homicide, it would be an error to enumerate those as “perioperative risk.” This is the purpose of the digital twin in our agentic (input) layer that should guide a prospective donor. There’s a delicate agency problem here that makes for a good case-study.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -566,6 +618,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment-with-the-film-s-core-themes">1. <strong>Alignment with the Film’s Core Themes</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generativity-and-physicality-layers">2. <strong>Generativity and Physicality Layers</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-nuances">3. <strong>Technical Nuances</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-and-artistic-rendering">4. <strong>Visualization and Artistic Rendering</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommendation">Recommendation:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
