@@ -380,7 +380,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -396,6 +398,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-enhancements">Key Enhancements</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -407,6 +417,26 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="woo-d">
 <h1>Woo’d 🗡️❤️💰<a class="headerlink" href="#woo-d" title="Permalink to this heading">#</a></h1>
+<section id="key-enhancements">
+<h2>Key Enhancements<a class="headerlink" href="#key-enhancements" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Annotations Integrated into Layers</strong>: Nodes now explicitly map to pivotal moments and ideas from the film. For example:</p>
+<ul class="simple">
+<li><p><strong>“Che Mio”</strong>: Represents the pivotal lens through which Giosuè interprets his father’s actions.</p></li>
+<li><p><strong>“Padre Fece”</strong>: Reflects Guido’s physical sacrifices and creative storytelling.</p></li>
+<li><p><strong>“Dono Per Me”</strong>: Giosuè’s realization of his father’s ultimate gift, innocence preserved.</p></li>
+</ul>
+</li>
+<li><p><strong>Refined Color Associations</strong>: Colors underscore emotional and thematic tones:</p>
+<ul class="simple">
+<li><p><strong>Paleturquoise</strong>: Hope, optimism, and legacy.</p></li>
+<li><p><strong>Lightgreen</strong>: Harmony and systemic navigation.</p></li>
+<li><p><strong>Lightsalmon</strong>: Tension and rebellion.</p></li>
+</ul>
+</li>
+<li><p><strong>Connections to the Film’s Arc</strong>: The directed graph emphasizes how themes like sacrifice and joy flow through layers, from cosmic ideals to physical realities.</p></li>
+</ol>
+<p>What do you think of this enriched connection between your neural network and <em>Vita è Bella</em>?</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -418,41 +448,65 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 
-<span class="c1"># Define the neural network structure; modified to align with &quot;Aprés Moi, Le Déluge&quot; (i.e. Je suis AlexNet)</span>
+<span class="c1"># Define the neural network structure</span>
 <span class="k">def</span> <span class="nf">define_layers</span><span class="p">():</span>
     <span class="k">return</span> <span class="p">{</span>
-        <span class="s1">&#39;Pre-Input/World&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cosmos/Particle &amp; Wave&#39;</span><span class="p">,</span> <span class="s1">&#39;Earth/Magnet &amp; Inorganic&#39;</span><span class="p">,</span> <span class="s1">&#39;Life: Procaryote/Eucaryote&#39;</span><span class="p">,</span> <span class="s1">&#39;Red Queen Hypothesis&#39;</span><span class="p">,</span> <span class="s1">&#39;History vs. Richard III&#39;</span><span class="p">,</span> <span class="s1">&#39;Data vs. Simulation&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Yellowstone/PerceptionAI&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Empire Unpossessed&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Input/AgenticAI&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Richmond is on the Seas&#39;</span><span class="p">,</span> <span class="s1">&#39;What Heir of York&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Hidden/GenerativeAI&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Sword Unswayed&#39;</span><span class="p">,</span> <span class="s1">&#39;The King Dead&#39;</span><span class="p">,</span> <span class="s1">&#39;Chair Empty&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Output/PhysicalAI&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;House of Tudor&#39;</span><span class="p">,</span> <span class="s1">&#39;Spies &amp; Intelligence&#39;</span><span class="p">,</span> <span class="s1">&#39;War of Roses&#39;</span><span class="p">,</span> <span class="s1">&#39;Knights &amp; Nobels&#39;</span><span class="p">,</span> <span class="s1">&#39;Plantaganet&#39;</span><span class="p">]</span>
+        <span class="c1"># Divine and narrative framework in the film</span>
+        <span class="s1">&#39;World&#39;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s1">&#39;Cosmos&#39;</span><span class="p">,</span>  <span class="c1"># Guido’s grand, universal sense of play and creativity</span>
+            <span class="s1">&#39;Earth&#39;</span><span class="p">,</span>  <span class="c1"># The tangible and oppressive reality of the Holocaust</span>
+            <span class="s1">&#39;Life&#39;</span><span class="p">,</span>  <span class="c1"># The stakes of survival and human connection</span>
+            <span class="s1">&#39;Il Sacrificio&#39;</span><span class="p">,</span>  <span class="c1"># Guido’s ultimate sacrifice</span>
+            <span class="s1">&#39;Mia Storia&#39;</span><span class="p">,</span>  <span class="c1"># Giosuè’s personal narrative, shaped by his father</span>
+            <span class="s1">&#39;Dono Per Me&#39;</span>  <span class="c1"># The &quot;gift&quot; of innocence and joy given by Guido</span>
+        <span class="p">],</span>
+        <span class="c1"># Perception and filtering of reality</span>
+        <span class="s1">&#39;Perception&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Che Mio&#39;</span><span class="p">],</span>  <span class="c1"># How Giosuè interprets his father’s actions and words</span>
+        <span class="c1"># Agency and Guido’s defining traits</span>
+        <span class="s1">&#39;Agency&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cheerfulness&#39;</span><span class="p">,</span> <span class="s1">&#39;Optimism&#39;</span><span class="p">],</span>  <span class="c1"># Guido’s tools for shaping the narrative</span>
+        <span class="c1"># Generativity and legacy</span>
+        <span class="s1">&#39;Generativity&#39;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s1">&#39;Anarchy&#39;</span><span class="p">,</span>  <span class="c1"># Guido’s rebellion against oppressive reality</span>
+            <span class="s1">&#39;Oligarchy&#39;</span><span class="p">,</span>  <span class="c1"># The systemic constraints he navigates</span>
+            <span class="s1">&#39;Padre Fece&#39;</span>  <span class="c1"># The actions and sacrifices Guido made for his son</span>
+        <span class="p">],</span>
+        <span class="c1"># Physical realities and their interplay</span>
+        <span class="s1">&#39;Physicality&#39;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s1">&#39;Dynamic&#39;</span><span class="p">,</span>  <span class="c1"># Guido’s improvisational actions, like creating the “game”</span>
+            <span class="s1">&#39;Partisan&#39;</span><span class="p">,</span>  <span class="c1"># The direct oppression he faces</span>
+            <span class="s1">&#39;Common Wealth&#39;</span><span class="p">,</span>  <span class="c1"># Shared humanity and joy despite hardship</span>
+            <span class="s1">&#39;Non-Partisan&#39;</span><span class="p">,</span>  <span class="c1"># Universal themes transcending sides</span>
+            <span class="s1">&#39;Static&#39;</span>  <span class="c1"># The immovable, tragic finality of the Holocaust</span>
+        <span class="p">]</span>
     <span class="p">}</span>
 
 <span class="c1"># Assign colors to nodes</span>
 <span class="k">def</span> <span class="nf">assign_colors</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Empire Unpossessed&#39;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;yellow&#39;</span>
-    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Pre-Input/World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Data vs. Simulation&#39;</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Pre-Input/World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;History vs. Richard III&#39;</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>
-    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Input/AgenticAI&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;What Heir of York&#39;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Hidden/GenerativeAI&#39;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Chair Empty&#39;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;The King Dead&#39;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Sword Unswayed&#39;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>
-    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Output/PhysicalAI&#39;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Plantaganet&#39;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Knights &amp; Nobels&#39;</span><span class="p">,</span> <span class="s1">&#39;War of Roses&#39;</span><span class="p">,</span> <span class="s1">&#39;Spies &amp; Intelligence&#39;</span><span class="p">]:</span>
-            <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;House of Tudor&#39;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>
-    <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>  <span class="c1"># Default color</span>
+    <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Che Mio&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;yellow&#39;</span>  <span class="c1"># Perception as the interpretive bridge</span>
+    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Dono Per Me&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>  <span class="c1"># Optimism and the &quot;gift&quot;</span>
+    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Mia Storia&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>  <span class="c1"># Harmony and legacy</span>
+    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Cosmos&#39;</span><span class="p">,</span> <span class="s1">&#39;Earth&#39;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="s1">&#39;lightgray&#39;</span>  <span class="c1"># Context of divine and tangible</span>
+    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Agency&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Optimism&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>  <span class="c1"># Guido’s defining hope</span>
+    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Generativity&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Padre Fece&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>  <span class="c1"># Guido’s ultimate acts of selflessness</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Oligarchy&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>  <span class="c1"># Navigating systemic structures</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Anarchy&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>  <span class="c1"># Rebellion and creativity</span>
+    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Physicality&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Static&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>  <span class="c1"># The unchanging, tragic realities</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Non-Partisan&#39;</span><span class="p">,</span> <span class="s1">&#39;Common Wealth&#39;</span><span class="p">,</span> <span class="s1">&#39;Partisan&#39;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>  <span class="c1"># Shared humanity and resilience</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Dynamic&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>  <span class="c1"># Guido’s improvisation and vitality</span>
+    <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>  <span class="c1"># Default color for tension or conflict</span>
 
 <span class="c1"># Calculate positions for nodes</span>
 <span class="k">def</span> <span class="nf">calculate_positions</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">center_x</span><span class="p">,</span> <span class="n">offset</span><span class="p">):</span>
@@ -478,7 +532,10 @@ document.write(`
 
     <span class="c1"># Add edges (without weights)</span>
     <span class="k">for</span> <span class="n">layer_pair</span> <span class="ow">in</span> <span class="p">[</span>
-        <span class="p">(</span><span class="s1">&#39;Pre-Input/World&#39;</span><span class="p">,</span> <span class="s1">&#39;Yellowstone/PerceptionAI&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Yellowstone/PerceptionAI&#39;</span><span class="p">,</span> <span class="s1">&#39;Input/AgenticAI&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Input/AgenticAI&#39;</span><span class="p">,</span> <span class="s1">&#39;Hidden/GenerativeAI&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Hidden/GenerativeAI&#39;</span><span class="p">,</span> <span class="s1">&#39;Output/PhysicalAI&#39;</span><span class="p">)</span>
+        <span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">,</span> <span class="s1">&#39;Perception&#39;</span><span class="p">),</span>  <span class="c1"># Giosuè interprets the &quot;World&quot; through &quot;Che Mio&quot;</span>
+        <span class="p">(</span><span class="s1">&#39;Perception&#39;</span><span class="p">,</span> <span class="s1">&#39;Agency&#39;</span><span class="p">),</span>  <span class="c1"># Guido’s cheerfulness shapes Giosuè’s perception</span>
+        <span class="p">(</span><span class="s1">&#39;Agency&#39;</span><span class="p">,</span> <span class="s1">&#39;Generativity&#39;</span><span class="p">),</span>  <span class="c1"># Guido’s optimism drives his generative actions</span>
+        <span class="p">(</span><span class="s1">&#39;Generativity&#39;</span><span class="p">,</span> <span class="s1">&#39;Physicality&#39;</span><span class="p">)</span>  <span class="c1"># His legacy plays out in the physical world</span>
     <span class="p">]:</span>
         <span class="n">source_layer</span><span class="p">,</span> <span class="n">target_layer</span> <span class="o">=</span> <span class="n">layer_pair</span>
         <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">layers</span><span class="p">[</span><span class="n">source_layer</span><span class="p">]:</span>
@@ -486,12 +543,12 @@ document.write(`
                 <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
 
     <span class="c1"># Draw the graph</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
     <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span>
         <span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span>
         <span class="n">node_size</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&quot;arc3,rad=0.1&quot;</span>
     <span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;The Legend Exceeds History </span><span class="se">\n</span><span class="s2"> Fiction, in Good Hands, Often Does&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Questa è la mia storia: Vita è Bella&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1"># Run the visualization</span>
@@ -501,15 +558,16 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/397ae0f18b98855c7b08a382894cc2942a8b27b0c96f911c0588c05bd420edb0.png" src="../_images/397ae0f18b98855c7b08a382894cc2942a8b27b0c96f911c0588c05bd420edb0.png" />
+<img alt="../_images/6e9a6e47eafe4cc0bd8602f59d5c9e4c6eb989e5a17b71fbd88f7fb9eb54b416.png" src="../_images/6e9a6e47eafe4cc0bd8602f59d5c9e4c6eb989e5a17b71fbd88f7fb9eb54b416.png" />
 </div>
 </div>
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/blanche.png"><img alt="../_images/blanche.png" src="../_images/blanche.png" style="width: 1px; height: 1px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text"><em>Cambridge University Graduates</em>. They transplanted their notions of the sound means of tradition, the justified tactics of change within stability, and firm and resolute commitment to share ideals of humanity. And setup the stage for an aburd scene in Athens – <em>A Midsummer Nights Dream</em></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">This is an updated version of the script with annotations tying the neural network layers, colors, and nodes to specific moments in <em>Vita è Bella</em>, enhancing the connection to the film’s narrative and themes:</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -566,6 +624,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-enhancements">Key Enhancements</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
