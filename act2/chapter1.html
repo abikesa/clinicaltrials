@@ -407,6 +407,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="cunning-strategy">
 <h1>Cunning Strategy<a class="headerlink" href="#cunning-strategy" title="Permalink to this heading">#</a></h1>
+<p>This perspective captures the crux of the tension modernity faces: how to reconcile the singularity of a shared “node”—perspectivism—while acknowledging its inherent multiplicity. The yellow node, symbolically “single,” encapsulates the paradox of our age: it demands optimization of perception itself, yet defies resolution into a singular consensus because its essence is plurality. Each perspective holds equal weight, and therein lies both its power and its challenge.</p>
+<p>In a way, the optimization of this node is a radical shift. Historically, optimizations have centered on collective agreements—truths, systems, hierarchies—but perspectivism rejects the flattening of individual vantage points into one universal truth. Instead, it suggests an ongoing negotiation, a dynamic process where perspectives coexist without convergence.</p>
+<p>Modernity’s struggle with “my truth, your truth, their truth” reflects the discomfort of existing in a system that prizes individual agency but lacks a unifying framework. The question becomes: can the yellow node—the cornerstone of perception and subjectivity—be optimized in a way that respects its diversity without descending into chaos? Perhaps the optimization lies not in agreement but in creating a framework where the multiplicity of perspectives enhances rather than undermines the collective.</p>
+<p>This is not about solving the paradox but embracing it as the defining feature of our era. In the RICHER framework, the yellow node is both a cornerstone and a bottleneck—a point where all paths converge but no single path dominates. It symbolizes the struggle and beauty of living in a world where everyone’s view matters, even when that inclusivity resists coherence. Modernity’s challenge is not to resolve this but to live within its tension, finding meaning and stability in its inherent contradictions.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -418,39 +422,41 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 
-<span class="c1"># Define the neural network structure; modified to align with &quot;Aprés Moi, Le Déluge&quot; (i.e. Je suis AlexNet)</span>
+<span class="c1"># Define the neural network structure</span>
 <span class="k">def</span> <span class="nf">define_layers</span><span class="p">():</span>
     <span class="k">return</span> <span class="p">{</span>
-        <span class="s1">&#39;Pre-Input/World&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cosmos&#39;</span><span class="p">,</span> <span class="s1">&#39;Earth&#39;</span><span class="p">,</span> <span class="s1">&#39;Life&#39;</span><span class="p">,</span> <span class="s1">&#39;Nvidia&#39;</span><span class="p">,</span> <span class="s1">&#39;Parallel&#39;</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Yellowstone/PerceptionAI&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Interface&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Input/AgenticAI&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Digital-Twin&#39;</span><span class="p">,</span> <span class="s1">&#39;Enterprise&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Hidden/GenerativeAI&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Error&#39;</span><span class="p">,</span> <span class="s1">&#39;Space&#39;</span><span class="p">,</span> <span class="s1">&#39;Trial&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Output/PhysicalAI&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Loss-Function&#39;</span><span class="p">,</span> <span class="s1">&#39;Sensors&#39;</span><span class="p">,</span> <span class="s1">&#39;Feedback&#39;</span><span class="p">,</span> <span class="s1">&#39;Limbs&#39;</span><span class="p">,</span> <span class="s1">&#39;Optimization&#39;</span><span class="p">]</span>
+        <span class="s1">&#39;World&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cosmos&#39;</span><span class="p">,</span> <span class="s1">&#39;Earth&#39;</span><span class="p">,</span> <span class="s1">&#39;Life&#39;</span><span class="p">,</span> <span class="s1">&#39;Cost&#39;</span><span class="p">,</span> <span class="s1">&#39;Parallel&#39;</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">],</span> <span class="c1"># Divine: Cosmos-Earth; Red Queen: Life-Cost; Machine: Parallel-Time</span>
+        <span class="s1">&#39;Perception&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Perspectivism&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;Agency&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Surprise&#39;</span><span class="p">,</span> <span class="s1">&#39;Optimism&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;Generativity&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Anarchy&#39;</span><span class="p">,</span> <span class="s1">&#39;Oligarchy&#39;</span><span class="p">,</span> <span class="s1">&#39;Monarchy&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;Physicality&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Dynamic&#39;</span><span class="p">,</span> <span class="s1">&#39;Partisan&#39;</span><span class="p">,</span> <span class="s1">&#39;Common Wealth&#39;</span><span class="p">,</span> <span class="s1">&#39;Non-Partisan&#39;</span><span class="p">,</span> <span class="s1">&#39;Static&#39;</span><span class="p">]</span>
     <span class="p">}</span>
 
 <span class="c1"># Assign colors to nodes</span>
 <span class="k">def</span> <span class="nf">assign_colors</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Interface&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Perspectivism&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;yellow&#39;</span>
-    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Pre-Input/World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Time&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Time&#39;</span><span class="p">]:</span>
         <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Pre-Input/World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Parallel&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Parallel&#39;</span><span class="p">]:</span>
         <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>
-    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Input/AgenticAI&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Enterprise&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Cosmos&#39;</span><span class="p">,</span> <span class="s1">&#39;Earth&#39;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="s1">&#39;lightgray&#39;</span>
+    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Agency&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Optimism&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Hidden/GenerativeAI&#39;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Trial&#39;</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Generativity&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Monarchy&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Space&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Oligarchy&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Error&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Anarchy&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>
-    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Output/PhysicalAI&#39;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Optimization&#39;</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Physicality&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Static&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Limbs&#39;</span><span class="p">,</span> <span class="s1">&#39;Feedback&#39;</span><span class="p">,</span> <span class="s1">&#39;Sensors&#39;</span><span class="p">]:</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Non-Partisan&#39;</span><span class="p">,</span> <span class="s1">&#39;Common Wealth&#39;</span><span class="p">,</span> <span class="s1">&#39;Partisan&#39;</span><span class="p">]:</span>
             <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Loss-Function&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Dynamic&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>
     <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>  <span class="c1"># Default color</span>
 
@@ -478,7 +484,7 @@ document.write(`
 
     <span class="c1"># Add edges (without weights)</span>
     <span class="k">for</span> <span class="n">layer_pair</span> <span class="ow">in</span> <span class="p">[</span>
-        <span class="p">(</span><span class="s1">&#39;Pre-Input/World&#39;</span><span class="p">,</span> <span class="s1">&#39;Yellowstone/PerceptionAI&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Yellowstone/PerceptionAI&#39;</span><span class="p">,</span> <span class="s1">&#39;Input/AgenticAI&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Input/AgenticAI&#39;</span><span class="p">,</span> <span class="s1">&#39;Hidden/GenerativeAI&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Hidden/GenerativeAI&#39;</span><span class="p">,</span> <span class="s1">&#39;Output/PhysicalAI&#39;</span><span class="p">)</span>
+        <span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">,</span> <span class="s1">&#39;Perception&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Perception&#39;</span><span class="p">,</span> <span class="s1">&#39;Agency&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Agency&#39;</span><span class="p">,</span> <span class="s1">&#39;Generativity&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Generativity&#39;</span><span class="p">,</span> <span class="s1">&#39;Physicality&#39;</span><span class="p">)</span>
     <span class="p">]:</span>
         <span class="n">source_layer</span><span class="p">,</span> <span class="n">target_layer</span> <span class="o">=</span> <span class="n">layer_pair</span>
         <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">layers</span><span class="p">[</span><span class="n">source_layer</span><span class="p">]:</span>
@@ -491,7 +497,7 @@ document.write(`
         <span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span>
         <span class="n">node_size</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&quot;arc3,rad=0.1&quot;</span>
     <span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Archimedes&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Snails Pace vs. Compressed Time&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1"># Run the visualization</span>
@@ -501,7 +507,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/464c93efa22d320ab5baf68f2b0a3aa8bf912ed3203c0ed93b7bfa0024f35109.png" src="../_images/464c93efa22d320ab5baf68f2b0a3aa8bf912ed3203c0ed93b7bfa0024f35109.png" />
+<img alt="../_images/b8238d80ec1e4d6147a86d3e87a244bbe54b24c4ee102f00fe0e0ccfc2e0292c.png" src="../_images/b8238d80ec1e4d6147a86d3e87a244bbe54b24c4ee102f00fe0e0ccfc2e0292c.png" />
 </div>
 </div>
 <figure class="align-default" id="id1">
