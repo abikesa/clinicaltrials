@@ -407,6 +407,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="engineering">
 <h1>Engineering<a class="headerlink" href="#engineering" title="Permalink to this heading">#</a></h1>
+<p>I love this framing—seeing the yellow node as augmentation injects a sense of dynamism into the system. Reality is foundational, but augmented reality—whether through simulation, imagination, or creativity—gives it wings. It’s not just about observing the world as it is but about layering possibilities, projections, and interpretations over it. That’s where humanity thrives: in the space between what <em>is</em> and what <em>could be.</em></p>
+<p>History without legend, as you suggest, would be sterile. Legend isn’t just a layer of embellishment; it’s a framework for meaning, a way of transforming bare facts into something that resonates across generations. Without it, art, as we know it, might not exist—just as mythology gave us Homer, legend gave us the Arthurian tales, and folklore birthed Shakespeare’s witches. It’s in that augmentation of reality that our creative impulses take root.</p>
+<p>By extending this into augmented reality, you’re linking the timeless practice of storytelling with the cutting-edge tools of simulation and tech. It’s as though the yellow node represents not just the processing of reality but the <em>transcendence</em> of it—augmenting the past to spark the future. Would history be tolerable without its accompanying legends? Hardly. And by that logic, our future legends will likely emerge from the augmented realities we’re crafting today.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -418,39 +421,41 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 
-<span class="c1"># Define the neural network structure; modified to align with &quot;Aprés Moi, Le Déluge&quot; (i.e. Je suis AlexNet)</span>
+<span class="c1"># Define the neural network structure</span>
 <span class="k">def</span> <span class="nf">define_layers</span><span class="p">():</span>
     <span class="k">return</span> <span class="p">{</span>
-        <span class="s1">&#39;Pre-Input/World&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cosmos/Particle &amp; Wave&#39;</span><span class="p">,</span> <span class="s1">&#39;Earth/Magnet &amp; Inorganic&#39;</span><span class="p">,</span> <span class="s1">&#39;Life: Procaryote/Eucaryote&#39;</span><span class="p">,</span> <span class="s1">&#39;Red Queen Hypothesis&#39;</span><span class="p">,</span> <span class="s1">&#39;History vs. Shakespeare&#39;</span><span class="p">,</span> <span class="s1">&#39;Simulation vs. Data&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Yellowstone/PerceptionAI&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Empire Unpossessed&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Input/AgenticAI&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Richmond is on the Seas&#39;</span><span class="p">,</span> <span class="s1">&#39;What Heir of York&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Hidden/GenerativeAI&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Sword Unswayed&#39;</span><span class="p">,</span> <span class="s1">&#39;The King Dead&#39;</span><span class="p">,</span> <span class="s1">&#39;Chair Empty&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;Output/PhysicalAI&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;House of Tudor&#39;</span><span class="p">,</span> <span class="s1">&#39;Spies &amp; Intelligence&#39;</span><span class="p">,</span> <span class="s1">&#39;War of Roses&#39;</span><span class="p">,</span> <span class="s1">&#39;Knights &amp; Nobels&#39;</span><span class="p">,</span> <span class="s1">&#39;Plantaganet&#39;</span><span class="p">]</span>
+        <span class="s1">&#39;World&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cosmos&#39;</span><span class="p">,</span> <span class="s1">&#39;Earth&#39;</span><span class="p">,</span> <span class="s1">&#39;Life&#39;</span><span class="p">,</span> <span class="s1">&#39;Cost&#39;</span><span class="p">,</span> <span class="s1">&#39;Parallel&#39;</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">],</span> <span class="c1"># Divine: Cosmos-Earth; Red Queen: Life-Cost; Machine: Parallel-Time</span>
+        <span class="s1">&#39;Perception&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Perspectivism&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;Agency&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Surprise&#39;</span><span class="p">,</span> <span class="s1">&#39;Optimism&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;Generativity&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Anarchy&#39;</span><span class="p">,</span> <span class="s1">&#39;Oligarchy&#39;</span><span class="p">,</span> <span class="s1">&#39;Monarchy&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;Physicality&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Dynamic&#39;</span><span class="p">,</span> <span class="s1">&#39;Partisan&#39;</span><span class="p">,</span> <span class="s1">&#39;Common Wealth&#39;</span><span class="p">,</span> <span class="s1">&#39;Non-Partisan&#39;</span><span class="p">,</span> <span class="s1">&#39;Static&#39;</span><span class="p">]</span>
     <span class="p">}</span>
 
 <span class="c1"># Assign colors to nodes</span>
 <span class="k">def</span> <span class="nf">assign_colors</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Empire Unpossessed&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Perspectivism&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;yellow&#39;</span>
-    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Pre-Input/World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Simulation vs. Data&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Time&#39;</span><span class="p">]:</span>
         <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Pre-Input/World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;History vs. Shakespeare&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Parallel&#39;</span><span class="p">]:</span>
         <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>
-    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Input/AgenticAI&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;What Heir of York&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;World&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span> <span class="s1">&#39;Cosmos&#39;</span><span class="p">,</span> <span class="s1">&#39;Earth&#39;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="s1">&#39;lightgray&#39;</span>
+    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Agency&#39;</span> <span class="ow">and</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Optimism&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Hidden/GenerativeAI&#39;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Chair Empty&#39;</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Generativity&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Monarchy&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;The King Dead&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Oligarchy&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Sword Unswayed&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Anarchy&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>
-    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Output/PhysicalAI&#39;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Plantaganet&#39;</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">layer</span> <span class="o">==</span> <span class="s1">&#39;Physicality&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Static&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;paleturquoise&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Knights &amp; Nobels&#39;</span><span class="p">,</span> <span class="s1">&#39;War of Roses&#39;</span><span class="p">,</span> <span class="s1">&#39;Spies &amp; Intelligence&#39;</span><span class="p">]:</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Non-Partisan&#39;</span><span class="p">,</span> <span class="s1">&#39;Common Wealth&#39;</span><span class="p">,</span> <span class="s1">&#39;Partisan&#39;</span><span class="p">]:</span>
             <span class="k">return</span> <span class="s1">&#39;lightgreen&#39;</span>
-        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;House of Tudor&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">node</span> <span class="o">==</span> <span class="s1">&#39;Dynamic&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>
     <span class="k">return</span> <span class="s1">&#39;lightsalmon&#39;</span>  <span class="c1"># Default color</span>
 
@@ -478,7 +483,7 @@ document.write(`
 
     <span class="c1"># Add edges (without weights)</span>
     <span class="k">for</span> <span class="n">layer_pair</span> <span class="ow">in</span> <span class="p">[</span>
-        <span class="p">(</span><span class="s1">&#39;Pre-Input/World&#39;</span><span class="p">,</span> <span class="s1">&#39;Yellowstone/PerceptionAI&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Yellowstone/PerceptionAI&#39;</span><span class="p">,</span> <span class="s1">&#39;Input/AgenticAI&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Input/AgenticAI&#39;</span><span class="p">,</span> <span class="s1">&#39;Hidden/GenerativeAI&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Hidden/GenerativeAI&#39;</span><span class="p">,</span> <span class="s1">&#39;Output/PhysicalAI&#39;</span><span class="p">)</span>
+        <span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">,</span> <span class="s1">&#39;Perception&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Perception&#39;</span><span class="p">,</span> <span class="s1">&#39;Agency&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Agency&#39;</span><span class="p">,</span> <span class="s1">&#39;Generativity&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Generativity&#39;</span><span class="p">,</span> <span class="s1">&#39;Physicality&#39;</span><span class="p">)</span>
     <span class="p">]:</span>
         <span class="n">source_layer</span><span class="p">,</span> <span class="n">target_layer</span> <span class="o">=</span> <span class="n">layer_pair</span>
         <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">layers</span><span class="p">[</span><span class="n">source_layer</span><span class="p">]:</span>
@@ -491,7 +496,7 @@ document.write(`
         <span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span>
         <span class="n">node_size</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&quot;arc3,rad=0.1&quot;</span>
     <span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Richard III&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Snails Pace vs. Compressed Time&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1"># Run the visualization</span>
@@ -501,7 +506,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/6eccc7ce9b30c54b795d84e7abaa7576dc3ff62194d4e03731eaabf9e555e53c.png" src="../_images/6eccc7ce9b30c54b795d84e7abaa7576dc3ff62194d4e03731eaabf9e555e53c.png" />
+<img alt="../_images/b8238d80ec1e4d6147a86d3e87a244bbe54b24c4ee102f00fe0e0ccfc2e0292c.png" src="../_images/b8238d80ec1e4d6147a86d3e87a244bbe54b24c4ee102f00fe0e0ccfc2e0292c.png" />
 </div>
 </div>
 <figure class="align-default" id="id1">
